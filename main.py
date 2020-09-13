@@ -2,9 +2,8 @@ import os, fitz
 
 print(os.getcwd())
 
-imgdir= input("digite o caminho para a pasta onde estão as imagens: ")
-# imgdir = os.path.join(os.getcwd(),"images")  # where the pics are
-name=input("digite o nome da saída: ")
+imgdir= input("Digite o caminho para a pasta onde estão as imagens: ")
+name=input("Digite o nome da saída: ")
 
 
 imglist = os.listdir(imgdir)  # list of them
@@ -21,6 +20,5 @@ for i, f in enumerate(imglist):
     page = doc.newPage(width = rect.width,  # new page with ...
                        height = rect.height)  # pic dimension
     page.showPDFpage(rect, imgPDF, 0)  # image fills the page
-    
 
 doc.save("{}.pdf".format(name))
