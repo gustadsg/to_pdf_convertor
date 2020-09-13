@@ -3,7 +3,7 @@ import os, fitz
 print(os.getcwd())
 
 imgdir= input("digite o caminho para a pasta onde estão as imagens: ")
-#imgdir = os.path.join(os.getcwd(),"images")  # where the pics are
+# imgdir = os.path.join(os.getcwd(),"images")  # where the pics are
 name=input("digite o nome da saída: ")
 
 
