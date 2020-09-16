@@ -1,40 +1,15 @@
 import os, fitz, re
-
-
-def getPosition(imgTuple):
-    aux = imgTuple[0]
-    aux = list(map(int, aux))
-    if aux:
-        aux=aux[0]
-    else:
-        aux=0
-    return (aux, imgTuple[1])
-
+from Folder import Folder
 
 extensionsList = ['jpg','jpeg','png']
 
 imgdir = input("Digite o caminho para a pasta onde estão as imagens: ") # Recieves the path to the folder
 name = input("Digite o nome da saída: ") # Recieves the name of the output file
 
-imglist = os.listdir(imgdir)  # list of the images
-orderedImgs = list()
-
-# ordering the images by name
-for f in imglist:
-    pos = re.findall(r'\d+', f)
-    fileTuple=(pos, f)
-    orderedImgs.append(fileTuple)
-
-for img in range(len(orderedImgs)):
-    orderedImgs[img] = getPosition(orderedImgs[img])
-
-orderedImgs.sort(key=lambda x: x[0])
-
-imgcount = len(imglist)  # pic count
-
+folder = Folder(imgdir)
 doc = fitz.open()  # PDF with the pictures
 
-for position, f in orderedImgs:
+for position, f in folder.files:
     filename, extension = f.split(".")
 
     if extension in extensionsList:       
