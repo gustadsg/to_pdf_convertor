@@ -1,4 +1,4 @@
-import os, re
+import os, re, functools
 
 class Folder:
     def __init__(self, path):
@@ -11,22 +11,21 @@ class Folder:
         
         orderedImgs = list()
         for f in imglist:
-            pos = re.findall(r'\d+', f)
+            if re.findall(r'\d+',f):
+                pos = functools.reduce(lambda x,y: x+y ,re.findall(r'\d+',f))
+            else:
+                pos =0
+                
             fileTuple=(pos, f)
             orderedImgs.append(fileTuple)
 
         for img in range(len(orderedImgs)):
             orderedImgs[img] = self.getPosition(orderedImgs[img])
             
-        orderedImgs.sort(key=lambda x: x[0])
+        orderedImgs.sort(key=lambda x: (x[0], x[1]))
         return orderedImgs
 
 
     def getPosition(self, imgTuple):
-        aux = imgTuple[0]
-        aux = list(map(int, aux))
-        if aux:
-            aux=aux[0]
-        else:
-            aux=0
+        aux = int(imgTuple[0])        
         return (aux, imgTuple[1])
