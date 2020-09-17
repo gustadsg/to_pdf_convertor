@@ -17,9 +17,10 @@ def run():
     doc = fitz.open()  # PDF with the pictures
 
     for position, f in folder.files:
-        filename, extension = f.split(".")
+        filename=[]
+        filename = f.split(".")
 
-        if extension in extensionsList:       
+        if filename[-1] in extensionsList:       
             img = fitz.open(os.path.join(imgdir, f))  # open pic as document
             rect = img[0].rect  # pic dimension
             pdfbytes = img.convertToPDF()  # make a PDF stream
