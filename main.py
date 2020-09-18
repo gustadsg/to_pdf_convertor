@@ -1,18 +1,13 @@
 import os, fitz, re
 from Folder import Folder
 
-def run():
+def selectFolder(imgdir):
+    folder = Folder(imgdir)
+    return os.listdir(imgdir)
+    
+
+def run(imgdir, name="output"):
     extensionsList = ['jpg','jpeg','png']
-
-    imgdir = input("Digite o caminho para a pasta onde estão as imagens: ") # Recieves the path to the folder
-    while not os.path.isdir(imgdir):
-        imgdir = input("Entada inválida. Por favor, digite novamente o caminho para a pasta onde estão as imagens ou 0 para sair: ")
-        if imgdir == "0":
-            print('Fechando o programa...')
-            return 0 
-            
-    name = input("Digite o nome da saída: ") # Recieves the name of the output file
-
     folder = Folder(imgdir)
     doc = fitz.open()  # PDF with the pictures
 
@@ -33,4 +28,12 @@ def run():
     print(name + ".pdf salvo com sucesso")
 
 if __name__=="__main__":
-    run()
+    imgdir = input("Digite o caminho para a pasta onde estão as imagens: ") # Recieves the path to the folder
+    while not os.path.isdir(imgdir):
+        imgdir = input("Entada inválida. Por favor, digite novamente o caminho para a pasta onde estão as imagens ou 0 para sair: ")
+        if imgdir == "0":
+            print('Fechando o programa...')
+            exit() 
+            
+    name = input("Digite o nome da saída: ") # Recieves the name of the output file
+    run(imgdir, name)
