@@ -10,8 +10,7 @@ class Folder:
     def __treatFilenames(self, filename):
         clean_name = re.sub("[0-9]", "", filename)
         clean_name = clean_name.lower()
-        clean_name = clean_name.replace("(", "")
-        clean_name = clean_name.replace(")", "")
+        clean_name = clean_name.replace("(", "").replace(")", "")
         clean_name = clean_name.replace(" ", "")
         return clean_name
 
