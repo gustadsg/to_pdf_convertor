@@ -12,7 +12,7 @@ def pdf_stream_from_image(imgdir, filename):
     Makes a pdf stream from img and returns it with the correct dimensions
     """
     img = fitz.open(os.path.join(imgdir, filename))  # open pic as document
-    dimension = img[0].rect  # pic dimension
+    dimension = img[0].rect  
     pdf_stream = img.convertToPDF()  # make a PDF stream
     img.close()
     return dimension, pdf_stream
@@ -28,12 +28,12 @@ def run(imgdir, name="output"):
         filename = f.split(".")
 
         if filename[-1] in extensionsList:
-            rect, pdfbytes = pdf_stream_from_image(imgdir, f)  # make a PDF stream
+            rect, pdfbytes = pdf_stream_from_image(imgdir, f) 
             imgPDF = fitz.open("pdf", pdfbytes)  # open stream as PDF
-            page = doc.newPage(width=rect.width, height=rect.height)  # page dimension
+            page = doc.newPage(width=rect.width, height=rect.height) 
             page.showPDFpage(rect, imgPDF, 0)  # image fills the page
 
-    doc.save(os.path.join(imgdir, "{}.pdf".format(name)))  # Save the document
+    doc.save(os.path.join(imgdir, "{}.pdf".format(name)))  
     print(name + ".pdf salvo com sucesso")
 
 
