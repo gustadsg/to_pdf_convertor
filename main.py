@@ -8,9 +8,6 @@ def selectFolder(imgdir):
 
 
 def pdf_stream_from_image(imgdir, filename):
-    """
-    Makes a pdf stream from img and returns it with the correct dimensions
-    """
     img = fitz.open(os.path.join(imgdir, filename))  # open pic as document
     dimension = img[0].rect  
     pdf_stream = img.convertToPDF()  # make a PDF stream
