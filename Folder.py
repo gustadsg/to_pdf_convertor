@@ -8,8 +8,9 @@ class Folder:
         self.size = len(self.files) if self.files else 0
 
     def __treatFilenames(self, filename):
-        filename = re.sub("[0-9]", "", filename)
-        clean_name = filename.lower().replace("(", "")
+        clean_name = re.sub("[0-9]", "", filename)
+        clean_name = clean_name.lower()
+        clean_name = clean_name.replace("(", "")
         clean_name = clean_name.replace(")", "")
         clean_name = clean_name.replace(" ", "")
         return clean_name
