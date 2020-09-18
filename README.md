@@ -1,4 +1,4 @@
-# Images to PDF convertor
+# Images to PDF Convertor
 
 ## Como usar:
 <span>Instale as dependências usando o arquivo indicado através do comando:</span>
