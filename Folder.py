@@ -8,7 +8,10 @@ class Folder:
 
     def __treatFilenames(self, filename):
         filename = re.sub('[0-9]', '', filename)
-        return filename.lower().replace("(", "").replace(")", "").replace(" ", "")
+        clean_name = filename.lower().replace("(", "")
+        clean_name = clean_name.replace(")", "")
+        clean_name = clean_name.replace(" ", "")
+        return clean_name
 
     def __orderFiles(self):
         imglist = os.listdir(self.path)
