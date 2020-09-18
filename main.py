@@ -37,7 +37,7 @@ def make_pdf(imgdir, name="output"):
 if __name__ == "__main__":
     imgdir = input(
         "Digite o caminho para a pasta onde estão as imagens: "
-    )  # Receives the path to the folder
+    ) 
     while not os.path.isdir(imgdir):
         imgdir = input(
             "Entada inválida. Por favor, digite novamente o caminho para a pasta onde estão as imagens ou 0 para sair: "
@@ -46,5 +46,5 @@ if __name__ == "__main__":
             print("Fechando o programa...")
             exit()
 
-    name = input("Digite o nome da saída: ")  # Receives the name of the output file
+    name = input("Digite o nome da saída: ")  
     make_pdf(imgdir, name)
