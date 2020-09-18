@@ -1,6 +1,6 @@
-# Images to PDF convertor
+# Images to PDF Convertor
 
-### Como usar:
+## Como usar:
 <span>Instale as dependências usando o arquivo indicado através do comando:</span>
 <h5>Infelizmente a lib fitz vem com muitas coisas desnecessárias mas ainda não foi encontrada uma alternativa</h5>
 
@@ -12,3 +12,5 @@
 ```python
     python main.py
 ```
+## Atenção:
+<p>Como criterio de ordenação, o Images To PDF Convertor ignora espaços e parênteses.<p>

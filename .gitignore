@@ -1,2 +1,5 @@
+.gitignore
 .python-version
 .vscode
+.idea/
+__pycache__/
