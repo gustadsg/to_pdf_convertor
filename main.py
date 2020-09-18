@@ -15,7 +15,7 @@ def pdf_stream_from_image(imgdir, filename):
     return dimension, pdf_stream
 
 
-def run(imgdir, name="output"):
+def make_pdf(imgdir, name="output"):
     extensionsList = ["jpg", "jpeg", "png"]
     folder = Folder(imgdir)
     doc = fitz.open()  # PDF with the pictures
@@ -37,7 +37,7 @@ def run(imgdir, name="output"):
 if __name__ == "__main__":
     imgdir = input(
         "Digite o caminho para a pasta onde estão as imagens: "
-    )  # Recieves the path to the folder
+    )  # Receives the path to the folder
     while not os.path.isdir(imgdir):
         imgdir = input(
             "Entada inválida. Por favor, digite novamente o caminho para a pasta onde estão as imagens ou 0 para sair: "
@@ -46,5 +46,5 @@ if __name__ == "__main__":
             print("Fechando o programa...")
             exit()
 
-    name = input("Digite o nome da saída: ")  # Recieves the name of the output file
-    run(imgdir, name)
+    name = input("Digite o nome da saída: ")  # Receives the name of the output file
+    make_pdf(imgdir, name)
