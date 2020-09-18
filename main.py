@@ -7,6 +7,17 @@ def selectFolder(imgdir):
     return os.listdir(imgdir)
 
 
+def pdf_stream_from_image(imgdir, filename):
+    """
+    Makes a pdf stream from img and returns it with the correct dimensions
+    """
+    img = fitz.open(os.path.join(imgdir, filename))  # open pic as document
+    dimension = img[0].rect  # pic dimension
+    pdf_stream = img.convertToPDF()  # make a PDF stream
+    img.close()
+    return dimension, pdf_stream
+
+
 def run(imgdir, name="output"):
     extensionsList = ["jpg", "jpeg", "png"]
     folder = Folder(imgdir)
@@ -17,10 +28,7 @@ def run(imgdir, name="output"):
         filename = f.split(".")
 
         if filename[-1] in extensionsList:
-            img = fitz.open(os.path.join(imgdir, f))  # open pic as document
-            rect = img[0].rect  # pic dimension
-            pdfbytes = img.convertToPDF()  # make a PDF stream
-            img.close()
+            rect, pdfbytes = pdf_stream_from_image(imgdir, f)  # make a PDF stream
             imgPDF = fitz.open("pdf", pdfbytes)  # open stream as PDF
             page = doc.newPage(width=rect.width, height=rect.height)  # page dimension
             page.showPDFpage(rect, imgPDF, 0)  # image fills the page
