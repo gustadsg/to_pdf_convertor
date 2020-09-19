@@ -19,8 +19,9 @@ class Folder:
 
         orderedImgs = list()
         for f in imglist:
-            if re.findall(r"\d+", f):
-                pos = int(functools.reduce(lambda x, y: x + y, re.findall(r"\d+", f)))
+            regex_pattern_find = re.findall(r"\d+", f)
+            if regex_pattern_find:
+                pos = int(functools.reduce(lambda x, y: x + y, regex_pattern_find))
             else:
                 pos = 0
 
