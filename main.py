@@ -3,7 +3,6 @@ from Folder import Folder
 
 
 def selectFolder(imgdir):
-    folder = Folder(imgdir)
     return os.listdir(imgdir)
 
 
