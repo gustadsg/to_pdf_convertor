@@ -32,6 +32,7 @@ def make_pdf(imgdir, name="output"):
 
     doc.save(os.path.join(imgdir, "{}.pdf".format(name)))
     print(name + ".pdf salvo com sucesso na pasta fonte.")
+    return True
 
 
 if __name__ == "__main__":
