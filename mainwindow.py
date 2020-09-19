@@ -9,7 +9,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QPushButton, QFileDialog, QMessageBox
-from main import run, selectFolder
+from main import make_pdf, selectFolder
 import os
 
 class Ui_MainWindow(object):
@@ -111,7 +111,7 @@ class Ui_MainWindow(object):
  
         def convert(self):
                 if self.imgdir:
-                        run(self.imgdir, self.lineEdit.text() or 'output')
+                        make_pdf(self.imgdir, self.lineEdit.text() or 'output')
                 else: 
                         msg = QMessageBox()
                         msg.setText("Selecione a pasta onde estão as imagens")
