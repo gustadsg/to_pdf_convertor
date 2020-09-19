@@ -13,4 +13,4 @@
     python main.py
 ```
 ## Atenção:
-<p>Como criterio de ordenação, o Images To PDF Convertor ignora espaços e parênteses.<p>
+<p>Como criterio de ordenação, o Images to PDF Convertor ignora espaços e parênteses.<p>
