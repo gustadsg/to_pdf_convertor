@@ -78,6 +78,7 @@ class Ui_MainWindow(object):
         def retranslateUi(self, MainWindow):
                 _translate = QtCore.QCoreApplication.translate
                 MainWindow.setWindowTitle(_translate("MainWindow", "IMG to PDF convertor"))
+                MainWindow.setWindowIcon(QtGui.QIcon('icon.png'))
                 self.convert_btn.setText(_translate("MainWindow", "Converter para PDF"))
                 self.selectFolder_btn.setText(_translate("MainWindow", "Selecionar Pasta"))
                 __sortingEnabled = self.listWidget.isSortingEnabled()
@@ -111,11 +112,18 @@ class Ui_MainWindow(object):
  
         def convert(self):
                 if self.imgdir:
-                        make_pdf(self.imgdir, self.lineEdit.text() or 'output')
+                        status = make_pdf(self.imgdir, self.lineEdit.text() or 'output')
+                        if status:
+                                msg = QMessageBox()
+                                msg.setWindowTitle("PDF Salvo")
+                                msg.setText("PDF salvo com sucesso na pasta fonte")
+                                msg.setIcon(QMessageBox.Information)
+                                msg.exec_()
                 else: 
                         msg = QMessageBox()
-                        msg.setText("Selecione a pasta onde estão as imagens")
                         msg.setWindowTitle("Erro")
+                        msg.setText("Selecione a pasta onde estão as imagens")
+                        msg.setIcon(QMessageBox.Critical)
                         msg.exec_()
 
 if __name__ == "__main__":
