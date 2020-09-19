@@ -31,7 +31,7 @@ def make_pdf(imgdir, name="output"):
             page.showPDFpage(rect, imgPDF, 0)  # image fills the page
 
     doc.save(os.path.join(imgdir, "{}.pdf".format(name)))  
-    print(name + ".pdf salvo com sucesso")
+    print(name + ".pdf salvo com sucesso na pasta fonte.")
 
 
 if __name__ == "__main__":
