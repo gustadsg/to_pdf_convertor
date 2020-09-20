@@ -1,4 +1,6 @@
 # Images to PDF Convertor
+## O que faz?
+O Images to PDF Convertor recebe como entrada uma pasta com imagens e as salva, oredenadas por seus respectivos nomes, em um único PDF.
 ## Como usar:
 ###  -  Via linha de comando:
 1. Instale as dependências usando o arquivo indicado através do comando:
