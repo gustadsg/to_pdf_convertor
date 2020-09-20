@@ -2,7 +2,6 @@ import os, fitz, re, argparse
 from Folder import Folder
 
 argparser = argparse.ArgumentParser()
-argparser.add_argument('directory', type=str, metavar='', help='Caminho para a pasta onde estão as imagens')
 argparser.add_argument('-d', '--directory', type=str, metavar='', help='Caminho para a pasta onde estão as imagens')
 argparser.add_argument('-o', '--output', type=str, metavar='', help='Nome do arquivo que será salvo')
 args = argparser.parse_args()
