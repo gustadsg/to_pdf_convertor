@@ -14,7 +14,7 @@ python main.py  [--directory] [--output]
 	
 	`[-o ]` ou ` [--output]`: Nome do arquivo PDF que será salvo
 
-	Obs:  se o caminho para a pasta onde estão as imagens não for passado como argumento, será perguntado durante a execução do programa.
+Obs:  se o caminho para a pasta onde estão as imagens não for passado como argumento, será perguntado durante a execução do programa.
 
 ###  -  Via interface gráfica:
 1. Abra a pasta win ou linux de acordo com o seu sistema operacional
