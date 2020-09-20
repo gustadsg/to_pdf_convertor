@@ -30,3 +30,5 @@ Obs:  se o caminho para a pasta onde estão as imagens não for passado como arg
 
 
 O arquivo PDF será salvo no diretório que foi fornecido anteriormente. Caso o nome do arquivo de saída não seja fornecido, o PDF será salvo como "output.pdf"
+###  -  Atenção: 
+Como critério de ordenação, o Images to PDF Convertor desconsidera espaços e parênteses nos nomes dos seus arquivos de imagem
