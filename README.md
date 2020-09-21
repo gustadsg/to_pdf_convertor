@@ -30,3 +30,8 @@ Obs:  se o caminho para a pasta onde estão as imagens não for passado como arg
 
 
 O arquivo PDF será salvo no diretório que foi fornecido anteriormente. Caso o nome do arquivo de saída não seja fornecido, o PDF será salvo como "output.pdf"
+
+### License & Copyright
+© 2020 Gustavo da Silva Gomes, Universidade Federal de Minas Gerais
+
+Licensed under the [MIT License](LICENSE)
