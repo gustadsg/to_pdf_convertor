@@ -1,6 +1,16 @@
 # Images to PDF Convertor
 ## O que faz?
 O Images to PDF Convertor recebe como entrada uma pasta com imagens e as salva, oredenadas por seus respectivos nomes, em um único PDF.
+
+## Download:
+Se você quer baixar o projeto completo, inclusive os arquivos python, <a href="https://github.com/gustadsg/to_pdf_convertor/archive/master.zip">clique aqui</a>.
+
+Caso prefira baixar apenas o executável para Windows, <a href="https://downgit.github.io/#/home?url=https://github.com/gustadsg/to_pdf_convertor/tree/master/win">clique aqui</a>.
+
+Ou, se preferir apenas o executável para Linux, <a href="https://downgit.github.io/#/home?url=https://github.com/gustadsg/to_pdf_convertor/tree/master/linux">clique aqui</a>.
+
+Depois de fazer o download, basta descomprimir o arquivo e começar a usar.
+
 ## Como usar:
 ###  -  Via linha de comando:
 1. Instale as dependências usando o arquivo indicado através do comando:
@@ -30,6 +40,9 @@ Obs:  se o caminho para a pasta onde estão as imagens não for passado como arg
 
 
 O arquivo PDF será salvo no diretório que foi fornecido anteriormente. Caso o nome do arquivo de saída não seja fornecido, o PDF será salvo como "output.pdf"
+
+###  -  Atenção: 
+Como critério de ordenação, o Images to PDF Convertor desconsidera espaços e parênteses nos nomes dos seus arquivos de imagem
 
 ### License & Copyright
 © 2020 Gustavo da Silva Gomes, Universidade Federal de Minas Gerais
